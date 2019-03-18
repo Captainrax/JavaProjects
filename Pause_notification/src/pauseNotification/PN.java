@@ -90,7 +90,7 @@ public class PN {
 			public void run() {
 
 				LocalTime now = LocalTime.now(); // gets local time
-				String time = now.format(dtf); // converts formated time into Stringddd
+				String time = now.format(dtf); // converts formated time into Stringdddd
 				System.out.println(time); // debug
 
 				if (time.equals(timecomp)) {
