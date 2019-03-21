@@ -47,7 +47,7 @@ public class PN {
 		final SystemTray tray = SystemTray.getSystemTray();
 
 		URL url = PN.class.getClassLoader().getResource("flag.png"); // gets flag icon for system tray
-		Image img = ImageIO.read(url); // converts url path to an image for TrayIcon to read
+		Image img = ImageIO.read(url); // converts URL path to an image for TrayIcon to read
 
 		trayIcon = new TrayIcon(img, "PauseNotification", popup); // sets image, hover over tool tip, right click menu
 
@@ -58,12 +58,15 @@ public class PN {
 		popup.add(exitItem);
 		exitItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				tray.remove(trayIcon);
 				System.exit(0);
 			}
 		});
 		tray.add(trayIcon);
 
+		nextminute();
+	}
+// starts notif(); on the next minute
+	static void nextminute() {
 		ScheduledExecutorService schedul = Executors.newScheduledThreadPool(1);
 		final Runnable checkTime = new Runnable() {
 			public void run() {
@@ -80,18 +83,18 @@ public class PN {
 		};
 		schedul.scheduleAtFixedRate(checkTime, 0, 1, TimeUnit.SECONDS);
 	}
-
+// Performs a check every minute, displays windows notification if time.equals.predictedtime
 	static void notif() {
-		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm"); // formats local time
-		LocalTime nowcomp = LocalTime.of(15, 40); // time to display notification
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm");
+		LocalTime nowcomp = LocalTime.of(11, 30); // time to display notification (hours,minutes)
 		String timecomp = nowcomp.toString();
 		ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
 		final Runnable checkTime = new Runnable() {
 			public void run() {
 
 				LocalTime now = LocalTime.now(); // gets local time
-				String time = now.format(dtf); // converts formated time into Stringdddd
-				System.out.println(time); // debug
+				String time = now.format(dtf); // converts formated time into String
+//				System.out.println(time); // debug
 
 				if (time.equals(timecomp)) {
 					trayIcon.displayMessage("PAUSE", time, MessageType.INFO);
