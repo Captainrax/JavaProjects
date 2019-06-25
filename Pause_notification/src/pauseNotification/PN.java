@@ -65,14 +65,15 @@ public class PN {
 
 		nextminute();
 	}
-// starts notif(); on the next minute
+// runs an object once, on the next minute
 	static void nextminute() {
 		ScheduledExecutorService schedul = Executors.newScheduledThreadPool(1);
 		final Runnable checkTime = new Runnable() {
 			public void run() {
-				// get current time, format to seconds only in a String.
+				// get current time, format to seconds only.
 				org.joda.time.format.DateTimeFormatter fmtseconds = DateTimeFormat.forPattern("ss");
 				DateTime curtime = DateTime.now();
+				// Converts .toString
 				String curtim = curtime.toString(fmtseconds);
 
 				if (curtim.equals("00")) {
