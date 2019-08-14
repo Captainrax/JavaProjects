@@ -7,12 +7,16 @@ public class ArraySum {
 	
 	private static Scanner input;
 
-	// function adds up sum of ArrayList
-	public static int Arraysum( ArrayList<Integer> x) {
+	/**
+	 * function adds up sum of ArrayList
+	 * @return Sum of Array as Integer
+	 * @author Rax
+	*/
+	public static int Arraysum( ArrayList<Integer> arrayList) {
 		
 		int total = 0;
-		for ( int i = 0; i < x.size(); i++) {
-			total = total += x.get(i);
+		for ( int i = 0; i < arrayList.size(); i++) {
+			total = total += arrayList.get(i);
 		}
 		return total;
 	}

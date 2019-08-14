@@ -1,8 +1,8 @@
-package denBinæreTrekant;
+package denBinaereTrekant;
 
 import java.util.Scanner;
 
-public class DenBinæreTrekant {
+public class DenBinaereTrekant {
 
 	private static Scanner input;
 	

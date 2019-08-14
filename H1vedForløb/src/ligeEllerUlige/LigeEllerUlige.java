@@ -6,6 +6,7 @@ public class LigeEllerUlige {
 
 	private static Scanner input;
 	
+	
 	public static void main(String[] args) {
 
 		
