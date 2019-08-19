@@ -20,12 +20,13 @@ public class StringPalindrom {
         // adds userInput to b starting from the last char
         for(int i = n - 1; i >= 0; i--) {
             b = b + userInput.charAt(i);
+            System.out.println(b);
         }
         // checks if userInput match's b
         if(userInput.equalsIgnoreCase(b))  {
-            System.out.println("The string is palindrome.");
+            System.out.println("The string is a palindrome.");
         } else {
-            System.out.println("The string is not palindrome.");
+            System.out.println("The string is not a palindrome.");
         }
 	}
 

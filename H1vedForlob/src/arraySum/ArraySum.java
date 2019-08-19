@@ -46,7 +46,7 @@ public class ArraySum {
 				} else if (Integer.parseInt(numArray[i]) < 0) {
 					int pcount = (Integer.parseInt(numArray[i]));
 					negativecount.add(pcount);
-				} else {
+				} else { // if Zero
 					int pcount = (Integer.parseInt(numArray[i]));
 					zerocount.add(pcount);
 				};
