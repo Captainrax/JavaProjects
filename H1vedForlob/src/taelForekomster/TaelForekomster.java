@@ -22,13 +22,17 @@ public class TaelForekomster {
 			// assigns input as the numArray size
 			int num = Integer.parseInt(input.nextLine());
 			String numArray[] = new String[num];
+			// Asks which number to look for
+			System.out.print("Enter which Number to look for: ");
+			int choosen = Integer.parseInt(input.nextLine());
+			
 			ArrayList<Integer> matchArray = new ArrayList<Integer>();
 			
 			for (int i = 0; i < numArray.length; i++) {
 				System.out.print("Enter Number " + (i+1) + " : ");
 				numArray[i] = input.nextLine();
-				// adds input if positive or negative to their own arrays
-				if (Integer.parseInt(numArray[i]) == 1) {
+				// checks if the choosen number matches with the number inserted into numArray
+				if (Integer.parseInt(numArray[i]) == choosen) {
 					int pcount = (Integer.parseInt(numArray[i]));
 					matchArray.add(pcount);
 				}
@@ -36,14 +40,14 @@ public class TaelForekomster {
 			
 			
 			if (matchArray.size() > 1)
-			System.out.println("The Number 1 was found " + matchArray.size() + " times");
+			System.out.println("The Number " + choosen + " was found " + matchArray.size() + " times");
 			else {
-				System.out.println("The Number 1 was found " + matchArray.size() + " time");
+				System.out.println("The Number " + choosen + " was found " + matchArray.size() + " time");
 			}
 			
-		// failsafe	
+		// failsafe	lol
 		} else {
-		 	System.out.println("Invalid input");
+		 	System.out.println("Input invalid");
 		}
 	}
 
